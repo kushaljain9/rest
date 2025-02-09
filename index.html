@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewprt" content="width=device-width, initial-scale=1.0">
+    <!-- google-fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <!-- font awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- connect style.css -->
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <title>Sagar Restaurant</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            font-size: 100%;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: "Poppins", serif;
+            overflow-x: hidden;
+        }
+
+        /* hero section */
+        #hero {
+            position: relative;
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        #hero::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url(https://imgs.search.brave.com/eWIm3U5yVthOwplpXfBB-5UdxQlvr6vLttyyN93SFas/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS5nZXR0eWltYWdl/cy5jb20vaWQvMTM4/Nzk1NDA4Ny9waG90/by9yZXN0YXVyYW50/LWludGVyaW9yLmpw/Zz9zPTYxMng2MTIm/dz0wJms9MjAmYz1T/SEV6QVZmeGJXWW9r/cS1neEE5Q1pyZ2ZM/aFFJdEIxcC1zbnlH/UnpaUy1BPQ);
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            filter: brightness(45%);
+        }
+
+        #hero_content {
+            position: absolute;
+            font-size: 2.8rem;
+        }
+
+        #hero_content h1 {
+            color: #fff;
+            font-size: 2.8rem;
+            text-shadow: 2px 2px 2px #000;
+        }
+
+        #hero_content h2 {
+            color: #fff;
+            font-size: 2rem;
+            font-family: cursive;
+            margin-bottom: 4rem;
+            text-shadow: 2px 2px 2px #000;
+        }
+
+        #hero_content a {
+            color: #fff;
+            padding: 3px 20px 3px 20px;
+            border: 1px solid orange;
+            background: rgb(0, 0, 0, 0.6);
+            font-size: 1.5rem;
+            text-decoration: none;
+            border-radius: 25px;
+        }
+
+        #hero_content a:hover {
+            background: navy;
+        }
+
+        /* /-----------------------------------/ */
+        /* /header section/ */
+        #header {
+            position: fixed;
+            top: 0;
+            width: 100vw;
+            height: 70px;
+            line-height: 70px;
+        }
+
+        #navbar {
+            display: flex;
+            justify-content: space-around;
+            background: rgb(0, 0, 0, 0.5);
+        }
+
+        #navbar h1 {
+            color: orange;
+            font-size: 1.8rem;
+            text-shadow: 2px 2px 2px #000;
+        }
+
+        #navbar ul {
+            display: flex;
+        }
+
+        #navbar ul li {
+            list-style: none;
+            padding: 3px 15px 3px 15px;
+        }
+
+        #navbar ul li:hover,
+        #phone a:hover,
+        #mobile_menu ul li:hover {
+            background: navy;
+            cursor: pointer;
+        }
+
+        #navbar ul li a {
+            text-decoration: none;
+            color: azure;
+            font-size: 1.1rem;
+        }
+
+        #phone a {
+            text-decoration: none;
+            color: #fff;
+            font-size: 1.1rem;
+            padding: 3px 15px 3px 15px;
+            border: 1px solid orange;
+        }
+
+        #mobile_menu {
+            display: none;
+            height: 40px;
+            line-height: 40px;
+            background-color: magenta;
+        }
+
+        #mobile_menu ul {
+            display: flex;
+            justify-content: center;
+        }
+
+        #mobile_menu ul li {
+            list-style: none;
+            padding: 0 5px 0 5px;
+        }
+
+        #mobile_menu ul li a {
+            text-decoration: none;
+            color: #fff;
+        }
+
+        /* menu section */
+        #menu {
+            padding: 25px 0 25px 0;
+        }
+
+        #section {
+            padding: 25px 0 25px 0;
+            text-align: center;
+            font-size: 2rem;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+
+        #menu_rows {
+            display: flex;
+            padding: 0 100px 0 100px;
+        }
+
+        #menu_col {
+            box-shadow: 2px 2px #bbb;
+            border: 1px solid #bbb;
+            background-color: #fff;
+            margin: 10px;
+            padding: 10px;
+            flex: 1;
+        }
+
+        #menu_col h2 {
+            background-color: red;
+            color: #fff;
+            text-align: center;
+            padding: 5px;
+            font-family: cursive;
+        }
+
+        #image {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            padding: 5px;
+            border: 2px solid orange
+        }
+
+        #image img {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        .box {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            margin: 5px;
+        }
+
+        /* Chef section */
+        #chef {
+            padding: 25px 0 25px 0;
+        }
+
+        #chef_rows {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .chef_col {
+            text-align: center;
+            padding: 10px;
+            margin: 5px;
+        }
+
+        #img {
+            width: 200px;
+            height: 250px;
+            margin: auto;
+        }
+
+        #img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+
+        @media screen and (max-width :768px) {
+            #header {
+                position: absolute;
+            }
+
+            #mobile_menu {
+                display: block;
+            }
+
+            #navbar ul {
+                display: none;
+            }
+
+            html {
+                font-size: 95%;
+            }
+
+            #menu_row {
+                flex-wrap: wrap;
+                padding: 0 10px 0 10px;
+            }
+        }
+
+        /* @media screen and (max-width : 360px){
+    html{
+        font-size: 70%;
+    }
+} */
+    </style>
+</head>
+
+<body>
+    <!-- hero section begin -->
+    <div id="hero">
+        <div id="hero_content">
+            <h1>Sagar Restaurant</h1>
+            <h2>Best Quality and Tasty Food Point</h2>
+            <a href="">Menu</a>
+        </div>
+    </div>
+    <!-- hero section end -->
+    <!-- header section begin -->
+    <div id="header">
+        <nav id="navbar">
+            <h1>Sagar Restaurant</h1>
+            <ul>
+                <li><a href="">Home</a></li>
+                <li><a href="">Menu</a></li>
+                <li><a href="">Chef</a></li>
+                <li><a href="">About</a></li>
+                <li><a href="">Contact</a></li>
+            </ul>
+            <div id="phone">
+                <a href="tel:+543563767346">+543563767346</a>
+            </div>
+        </nav>
+        <div id="mobile_menu">
+            <ul>
+                <li><a href="">Home</a></li>
+                <li><a href="">Menu</a></li>
+                <li><a href="">Chef</a></li>
+                <li><a href="">About</a></li>
+                <li><a href="">Contact</a></li>
+            </ul>
+        </div>
+    </div>
+    <!-- header section end -->
+    <!-- menu section begin -->
+    <div id="menu">
+        <h1 id="section">Menu</h1>
+        <div id="menu_row">
+            <div id="menu_col">
+                <h2>Breakfast</h2>
+                <div class="box">
+                    <div id="image">
+                        <img
+                            src="https://imgs.search.brave.com/WIwIIpYC2oq7MIcFjvD-YYqC1tWZioQAhjvawFx9l48/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS5nZXR0eWltYWdl/cy5jb20vaWQvMTIx/OTE4OTkwMC9waG90/by9hbWVyaWNhbi1i/cmVha2Zhc3QuanBn/P3M9NjEyeDYxMiZ3/PTAmaz0yMCZjPTZh/N0swU0dzTmVpMnRp/NGtvQURpczhWMkhB/Rm1Oa3Vnd2NMa0kt/NUJxd2c9">
+                    </div>
+                    <div>
+                        <h3>Tasty Dish 01</h3>
+                        <h4>25$</h4>
+                    </div>
+                </div>
+                <div class="box">
+                    <div id="image">
+                        <img
+                            src="https://imgs.search.brave.com/tNLjbXo-SD3BTu7kpS3sR4eNa8gIzXi_VQcO4W9JY0g/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS5pc3RvY2twaG90/by5jb20vaWQvMTMw/Mzg0Mzk4OS9waG90/by9icmVha2Zhc3Qt/d2l0aC1iYWd1ZXR0/ZS1icmVhZC5qcGc_/cz02MTJ4NjEyJnc9/MCZrPTIwJmM9dndQ/NmY0YmdTOFE4UDQ4/ekVoa0FGbWJPU1M0/SmZtQ1pMelNCT1Iy/cm1Ydz0">
+                    </div>
+                    <div>
+                        <h3>Tasty Dish 02</h3>
+                        <h4>10$</h4>
+                    </div>
+                </div>
+                <div class="box">
+                    <div id="image">
+                        <img
+                            src="https://imgs.search.brave.com/Ewzne10qG2sTJkTGej_8WVJ3RPtjHXvJS7V0TMyewlM/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS5pc3RvY2twaG90/by5jb20vaWQvMTA4/ODYzNjgzMi9waG90/by9kZWxpY2lvdXMt/aG9tZW1hZGUtYnJl/YWtmYXN0LXdpdGgt/cGFuY2FrZXMuanBn/P3M9NjEyeDYxMiZ3/PTAmaz0yMCZjPWdy/RDE1SEZ4YVp3VEk1/dHBFZG0yNlhOd2It/UzQxeHV3MXY5Sk1t/eXJVaVU9">
+                    </div>
+                    <div>
+                        <h3>Tasty Dish 03</h3>
+                        <h4>30$</h4>
+                    </div>
+                </div>
+            </div>
+            <div id="menu_col">
+                <h2>Lunch</h2>
+                <div class="box">
+                    <div id="image">
+                        <img
+                            src="https://imgs.search.brave.com/yXEwmiC0M-qHm6LK5pgkdq52lZIIpbSGb8jtAYTpD24/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS5nZXR0eWltYWdl/cy5jb20vaWQvMTg0/OTY2NzQ3L3Bob3Rv/L3VuaGVhbHRoeS1z/Y2hvb2wtbHVuY2gu/anBnP3M9NjEyeDYx/MiZ3PTAmaz0yMCZj/PUlleVh4YU5XT0F2/aExPeTVvNWxZVnQ2/X1VzQlVzREh5MmFw/TmlPbUlBYWM9">
+                    </div>
+                    <div>
+                        <h3>Tasty Dish 01</h3>
+                        <h4>25$</h4>
+                    </div>
+                </div>
+                <div class="box">
+                    <div id="image">
+                        <img
+                            src="https://imgs.search.brave.com/SvyB5IGuAcSeJ6Pk3G-EP0T_cj82c8PRcplxUCRIItg/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS5pc3RvY2twaG90/by5jb20vaWQvMTMx/NzUzNTE2MS9waG90/by90YWJsZS1mdWxs/LW9mLWZvb2QtZm9y/LWZhbWlseS10b3At/dmlldy5qcGc_cz02/MTJ4NjEyJnc9MCZr/PTIwJmM9bEEtMTRJ/c3hiMEV0VERDeWk4/eHlHb212aXRlQThs/TDhDRmh4V2RVUXp2/ST0">
+                    </div>
+                    <div>
+                        <h3>Tasty Dish 02</h3>
+                        <h4>10$</h4>
+                    </div>
+                </div>
+                <div class="box">
+                    <div id="image">
+                        <img
+                            src="https://imgs.search.brave.com/BsZhtstPpHDLK5M7ua4ZxLuae4AhgwtUmG0IC4pQS2I/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9idXJz/dC5zaG9waWZ5Y2Ru/LmNvbS9waG90b3Mv/aGFtYnVyZ2VyLWFu/ZC1mcmllcy5qcGc_/d2lkdGg9MTAwMCZm/b3JtYXQ9cGpwZyZl/eGlmPTAmaXB0Yz0w">
+                    </div>
+                    <div>
+                        <h3>Tasty Dish 03</h3>
+                        <h4>30$</h4>
+                    </div>
+                </div>
+            </div>
+            <div id="menu_col">
+                <h2>Dinner</h2>
+                <div class="box">
+                    <div id="image">
+                        <img
+                            src="https://imgs.search.brave.com/yiNqbZzN-teG6BudDBX-ruzWrsi5DAXTPHm7rtqQM44/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS5pc3RvY2twaG90/by5jb20vaWQvNjQ2/MzMyMTUwL3Bob3Rv/L3BhbGFrLXBhbmVl/ci5qcGc_cz02MTJ4/NjEyJnc9MCZrPTIw/JmM9R1NkTnhheC1C/elFUalBNUVJrRldJ/NEY3OXBxOThYWHA0/aXc4MldUMGF4VT0">
+                    </div>
+                    <div>
+                        <h3>Tasty Dish 01</h3>
+                        <h4>25$</h4>
+                    </div>
+                </div>
+                <div class="box">
+                    <div id="image">
+                        <img
+                            src="https://imgs.search.brave.com/n81wez3PgyvvLpePNR5QPW8OYdBHj_sXdOh0stFv5pw/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9idXJz/dC5zaG9waWZ5Y2Ru/LmNvbS9waG90b3Mv/Zmlyc3Qtc2xpY2Ut/b2YtZnJlc2gtbWFy/Z2FyaXRhLXBpenph/LmpwZz93aWR0aD0x/MDAwJmZvcm1hdD1w/anBnJmV4aWY9MCZp/cHRjPTA">
+                    </div>
+                    <div>
+                        <h3>Tasty Dish 02</h3>
+                        <h4>10$</h4>
+                    </div>
+                </div>
+                <div class="box">
+                    <div id="image">
+                        <img
+                            src="https://imgs.search.brave.com/iFkzJ0haFz6eVsz4AOrPG_DfByA-ECQzObTUGVu2gc4/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9idXJz/dC5zaG9waWZ5Y2Ru/LmNvbS9waG90b3Mv/ZGlubmVyLXBhcnR5/LmpwZz93aWR0aD0x/MDAwJmZvcm1hdD1w/anBnJmV4aWY9MCZp/cHRjPTA">
+                    </div>
+                    <div>
+                        <h3>Tasty Dish 03</h3>
+                        <h4>30$</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- chef section begin -->
+    <div id="chef">
+        <h1 id="section">chef</h1>
+        <div id="chef_row">
+            <div class="chef_col">
+                <div id="img">
+                    <img
+                        src="https://c8.alamy.com/comp/JB55CX/portrait-of-alone-professional-chef-with-victory-sign-smiling-at-you-JB55CX.jpg">
+                </div>
+                <div>
+                    <h4>Alamy</h4>
+                </div>
+            </div>
+            <div class="chef_col">
+                <div id="img">
+                    <img src="https://tse1.mm.bing.net/th?id=OIP.RMJpIEZKvrp-IvO2V8qNlQHaEu&pid=Api&P=0&h=180">
+                </div>
+                <div>
+                    <h4>Muddsar Qayyum</h4>
+                </div>
+            </div>
+            <div class="chef_col">
+                <div id="img">
+                    <img src="https://tse3.mm.bing.net/th?id=OIP.mG_93ENN3c0i05n8EN__1QHaFd&pid=Api&P=0&h=180">
+                </div>
+                <div>
+                    <h4>Fanstatic Chef</h4>
+                </div>
+            </div>
+            <div class="chef_col">
+                <div id="img">
+                    <img src="https://tse3.mm.bing.net/th?id=OIP.Zak4IKBHoquzcc_5gslsDAHaEK&pid=Api&P=0&h=180">
+                </div>
+                <div>
+                    <h4>Expert Chef</h4>
+                </div>
+            </div>
+        </div>
+    </div>
+     
+</body>
+
+</html>
